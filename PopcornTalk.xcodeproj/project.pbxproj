@@ -13,6 +13,11 @@
 		CBE29CB62D582402002BAFF6 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CBE29CB52D582402002BAFF6 /* Base */; };
 		CBE29CB82D582403002BAFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE29CB72D582403002BAFF6 /* Assets.xcassets */; };
 		CBE29CBB2D582403002BAFF6 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CBE29CBA2D582403002BAFF6 /* Base */; };
+		CBE29CC42D5825A6002BAFF6 /* ReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE29CC32D5825A6002BAFF6 /* ReviewsController.swift */; };
+		CBE29CC72D5832D0002BAFF6 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE29CC62D5832D0002BAFF6 /* Movie.swift */; };
+		CBE29CC92D5832E3002BAFF6 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE29CC82D5832E3002BAFF6 /* Review.swift */; };
+		CBE29CCB2D5832EE002BAFF6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE29CCA2D5832EE002BAFF6 /* User.swift */; };
+		CBE29CCD2D583517002BAFF6 /* ReviewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE29CCC2D583517002BAFF6 /* ReviewDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		CBE29CB72D582403002BAFF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBE29CBA2D582403002BAFF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBE29CBC2D582403002BAFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBE29CC32D5825A6002BAFF6 /* ReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsController.swift; sourceTree = "<group>"; };
+		CBE29CC62D5832D0002BAFF6 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		CBE29CC82D5832E3002BAFF6 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		CBE29CCA2D5832EE002BAFF6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CBE29CCC2D583517002BAFF6 /* ReviewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +66,10 @@
 		CBE29CAD2D582402002BAFF6 /* PopcornTalk */ = {
 			isa = PBXGroup;
 			children = (
-				CBE29CAE2D582402002BAFF6 /* AppDelegate.swift */,
+				CBE29CC52D5832C3002BAFF6 /* Data */,
+				CBE29CC22D58258B002BAFF6 /* Reviews */,
 				CBE29CB02D582402002BAFF6 /* SceneDelegate.swift */,
+				CBE29CAE2D582402002BAFF6 /* AppDelegate.swift */,
 				CBE29CB22D582402002BAFF6 /* ViewController.swift */,
 				CBE29CB42D582402002BAFF6 /* Main.storyboard */,
 				CBE29CB72D582403002BAFF6 /* Assets.xcassets */,
@@ -65,6 +77,25 @@
 				CBE29CBC2D582403002BAFF6 /* Info.plist */,
 			);
 			path = PopcornTalk;
+			sourceTree = "<group>";
+		};
+		CBE29CC22D58258B002BAFF6 /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				CBE29CC32D5825A6002BAFF6 /* ReviewsController.swift */,
+				CBE29CCC2D583517002BAFF6 /* ReviewDetailController.swift */,
+			);
+			path = Reviews;
+			sourceTree = "<group>";
+		};
+		CBE29CC52D5832C3002BAFF6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CBE29CC62D5832D0002BAFF6 /* Movie.swift */,
+				CBE29CC82D5832E3002BAFF6 /* Review.swift */,
+				CBE29CCA2D5832EE002BAFF6 /* User.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +169,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBE29CCD2D583517002BAFF6 /* ReviewDetailController.swift in Sources */,
 				CBE29CB32D582402002BAFF6 /* ViewController.swift in Sources */,
 				CBE29CAF2D582402002BAFF6 /* AppDelegate.swift in Sources */,
 				CBE29CB12D582402002BAFF6 /* SceneDelegate.swift in Sources */,
+				CBE29CC42D5825A6002BAFF6 /* ReviewsController.swift in Sources */,
+				CBE29CC72D5832D0002BAFF6 /* Movie.swift in Sources */,
+				CBE29CC92D5832E3002BAFF6 /* Review.swift in Sources */,
+				CBE29CCB2D5832EE002BAFF6 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
