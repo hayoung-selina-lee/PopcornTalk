@@ -10,14 +10,19 @@ import UIKit
 class ReviewsController: UITableViewController {
 
     let reviews = [
-        Movie(id:"1",title: "IronMan 1",rating: 5, date: Date.now),
-        Movie(id:"2",title: "IronMan 2",rating: 6, date: Date.now),
-        Movie(id:"3",title: "IronMan 3",rating: 7, date: Date.now)
+        Movie(id:"1",title: "IronMan 1",rating: 1.5, date: Date(), poster: "image.png"),
+        Movie(id:"2",title: "IronMan 2",rating: 2, date: Date(), poster: "image.png"),
+        Movie(id:"3",title: "IronMan 3",rating: 3, date: Date(), poster: "image.png")
         
     ]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    // Set row height
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150 // Adjust cell height
     }
     
     // how many row elements
@@ -27,14 +32,16 @@ class ReviewsController: UITableViewController {
     
     // connect data to view
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewedMovieCell", for: indexPath)
-        cell.textLabel?.text = reviews[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewedMovieCell", for: indexPath) as! ReviewsTableCell
+        let review = reviews[indexPath.row]
+        cell.configure(poster: review.poster, title: review.title, date: review.date, rating: review.rating)
         return cell
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        tableView.register(ReviewsTableCell.self, forCellReuseIdentifier: "ReviewedMovieCell") // register my custom cell
+        tableView.separatorStyle = .none // remove the line between cells
     }
   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

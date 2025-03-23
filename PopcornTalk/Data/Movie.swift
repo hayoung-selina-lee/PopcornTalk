@@ -10,7 +10,8 @@ import Foundation
 struct Movie {
     let id: String
     let title: String
-    let rating: Int
+    let rating: Double
     let date: Date
+    let poster: String // temp : for setting UI 
     //let posterURL: URL?
 }
