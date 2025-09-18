@@ -5,7 +5,7 @@
 //  Created by Hayoung Lee on 3/22/25.
 //
 
-import UIKit
+import SwiftUI
 
 class ReviewsTableCell: UITableViewCell {
     // Movie Poster
@@ -110,10 +110,10 @@ class ReviewsTableCell: UITableViewCell {
     }
     
     // Function to Configure Cell Data
-    func configure(poster: String, title: String, date: Date, rating: Double) {
+    func configure(poster: String, title: String, date: String, rating: Double) {
         posterImageView.image = UIImage(named: poster) ?? UIImage(named: "placeholder")
         titleLabel.text = title
-        dateLabel.text = formatDate(date)
+        dateLabel.text = date
         updateStarRating(rating: rating)
     }
     
@@ -126,11 +126,14 @@ class ReviewsTableCell: UITableViewCell {
     
     // Update Star Rating
     private func updateStarRating(rating: Double) {
+        starStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        
         let fullStars = Int(rating)
         let hasHalfStar = (rating - Double(fullStars)) >= 0.5
-
+        
         for i in 1...5 {
             let starImageView = UIImageView()
+            
             if i <= fullStars {
                 starImageView.image = UIImage(systemName: "star.fill")
             } else if hasHalfStar && i == fullStars + 1 {
@@ -138,8 +141,10 @@ class ReviewsTableCell: UITableViewCell {
             } else {
                 starImageView.image = UIImage(systemName: "star")
             }
+            
             starImageView.tintColor = .systemYellow
             starImageView.contentMode = .scaleAspectFit
+            
             starStackView.addArrangedSubview(starImageView)
         }
     }
